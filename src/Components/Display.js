@@ -44,7 +44,7 @@ export default function Display() {
           </div>
           <button type="submit">Submit</button>
         </form>
-        {fullName && <p>Your name is {fullName}</p>}
+        {fullName && <p>Full Name: {fullName}</p>}
       </div>
     </>
   );
