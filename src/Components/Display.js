@@ -6,12 +6,8 @@ export default function Display() {
   const [fullName, setFullName] = useState("");
 
   const handleSubmit = (e) => {
-    e.preventDefault(); 
-    if (firstName && lastName) {
-      setFullName(`${firstName} ${lastName}`);
-    } else {
-      setFullName(""); 
-    }
+    e.preventDefault();
+    setFullName(`${firstName} ${lastName}`);
   };
 
   return (
@@ -32,6 +28,7 @@ export default function Display() {
               type="text"
               id="firstName"
               name="firstName"
+              required
               onChange={(e) => setFirstName(e.target.value)}
             />
           </div>
@@ -41,12 +38,13 @@ export default function Display() {
               type="text"
               id="lastName"
               name="lastName"
+              required
               onChange={(e) => setLastName(e.target.value)}
             />
           </div>
           <button type="submit">Submit</button>
         </form>
-        {fullName && <p>Full Name : {fullName}</p>}
+        {fullName && <p>Your name is {fullName}</p>}
       </div>
     </>
   );
